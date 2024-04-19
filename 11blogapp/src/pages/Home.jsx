@@ -4,7 +4,7 @@ import Container from "../components/container/Container"
 import PostCard from "../components/PostCard"
 
 function Home() {
-  const [post, setPosts] = useState([])
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
     appwriteService.getPosts([]).then((posts) => {

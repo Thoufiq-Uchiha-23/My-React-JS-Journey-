@@ -2,6 +2,7 @@ import React from 'react'
 import Container from "../container/Container"
 import Logo from "../Logo"
 import Link from "./LogoutBtn"
+import LogoutBtn from "./LogoutBtn"
 import { useNavigate } from "react-router-dom"
 import { useSelector } from 'react-redux'
 
@@ -31,7 +32,7 @@ function Header() {
         },
         {
             name: "Add Posts",
-            slug: "/add-posts",
+            slug: "/add-post",
             active: authStatus
         }
     ]

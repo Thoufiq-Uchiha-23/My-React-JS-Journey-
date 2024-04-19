@@ -4,9 +4,9 @@ import Container from "../components/container/Container"
 import PostCard from "../components/PostCard"
 
 function AllPosts() {
-  const [post, setPosts] = useState([])
+  const [posts, setPosts] = useState([])
 
-  useEffect(() => {
+  useEffect((posts) => {
     appwriteService.getPosts([]).then((posts) => {
       if (posts) {
         setPosts(posts.documents)
