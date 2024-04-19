@@ -103,7 +103,10 @@ export default function PostForm({post}) {
             <img src={appwriteService.getFilePreview(post.featuredImage)} alt={post.title} 
             className='rounded-lg'
             />
-            <Select 
+          </div>
+            
+        )}
+        <Select 
             options={["active", "inactive"]}
             label="Status"
             className="mb-4"
@@ -116,8 +119,7 @@ export default function PostForm({post}) {
             >
               {post ? "Update" : "Submit"}</Button>
           </div>
-        )}
-      </div>
+        {console.log("I'm here")}
     </form>
   )
 }
