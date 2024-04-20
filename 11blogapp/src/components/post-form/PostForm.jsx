@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import {useForm} from "react-hook-form"
 import Button from "../Button"
 import Input from "../Input"
@@ -41,7 +41,7 @@ export default function PostForm({post}) {
       if (file) {
         const fileId  = file.$id
         data.featuredImage =fileId
-        const dbPost = await appwriteService.createPost({...data, userId: userData.$id})
+        const dbPost = await appwriteService.createPost({...data, userId: userData.userData.$id})
 
         if (dbPost) {
           navigate(`/post/${dbPost.$id}`)
@@ -90,12 +90,12 @@ export default function PostForm({post}) {
         defaultValue={getValues("content")}
         />
       </div>
-      <div className="1/3 px-2">
+      <div className="w-1/3 px-2">
         <Input 
         label="Featured Image"
         type="file"
         className="mb-4"
-        accept="image/png, image/jpg, image/jpeg"
+        accept="image/png, image/jpg, image/jpeg, image/gif"
         {...register("image", {required: !post})}
         />
         {post && (
